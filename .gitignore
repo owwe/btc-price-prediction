@@ -3,9 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 .DS_Store
+*venv
+dependencies
 # C extensions
 *.so
-
+*.zip
 # Distribution / packaging
 .Python
 build/

@@ -1,15 +1,10 @@
 from binance.spot import Spot
 from datetime import datetime,timedelta
-
 from sagemaker.feature_store.feature_group import FeatureGroup
 import boto3
 import pandas as pd
 import numpy as np
 import io
-from sagemaker.session import Session
-from sagemaker import get_execution_role
-
-
 
 
 
