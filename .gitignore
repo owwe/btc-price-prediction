@@ -8,6 +8,7 @@ dependencies
 # C extensions
 *.so
 *.zip
+.terraform/*
 # Distribution / packaging
 .Python
 build/
