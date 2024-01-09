@@ -11,7 +11,7 @@ import io
 def main():
     feature_group = FeatureGroup(name = 'BtcPriceData')
     client = Spot()
-    klines = client.klines("BTCUSDT", "5m",limit = 2*12)
+    klines = client.klines("BTCUSDT", "5m",limit = 3*12)
     df = pd.DataFrame(klines, columns =['open_time','open_price','high_price','low_price',
                                         'close_price','volume','close_time','quote_asset_volume',
                                         'number_of_trades','taker_buy_base_asset_volume',

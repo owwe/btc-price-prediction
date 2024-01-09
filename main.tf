@@ -34,10 +34,11 @@ resource "aws_iam_role" "iam_for_data_ingestor_lambda" {
 resource "aws_lambda_function" "data-ingestor-lambda" {
   # If the file is not in the current working directory you will need to include a
   # path.module in the filename.
-  image_uri      = "477472432946.dkr.ecr.eu-north-1.amazonaws.com/daily-data-ingestor-lambda-image:latest"
+  image_uri     = "477472432946.dkr.ecr.eu-north-1.amazonaws.com/daily-data-ingestor-lambda-image:latest"
   function_name = "btc_feature_store_data_ingestor"
   role          = aws_iam_role.iam_for_data_ingestor_lambda.arn
   package_type  = "Image"
+  timeout       = 300
   #source_code_hash = data.archive_file.lambda.output_base64sha256
 
 }
