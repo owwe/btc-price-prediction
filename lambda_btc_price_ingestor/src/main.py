@@ -5,13 +5,13 @@ import boto3
 import pandas as pd
 import numpy as np
 import io
+import json
 
 
-
-def main():
+def handler(event,context):
     feature_group = FeatureGroup(name = 'BtcPriceData')
     client = Spot()
-    klines = client.klines("BTCUSDT", "5m",limit = 3*12)
+    klines = client.klines("BTCUSDT", "5m",limit = 4*12)
     df = pd.DataFrame(klines, columns =['open_time','open_price','high_price','low_price',
                                         'close_price','volume','close_time','quote_asset_volume',
                                         'number_of_trades','taker_buy_base_asset_volume',
@@ -22,5 +22,5 @@ def main():
     df = df.astype(float)
     #print(df)
     #feature_group.load_feature_definitions(df)
-    feature_group.ingest(data_frame=df, max_workers=2, wait=True)
-    
+    feature_group.ingest(data_frame=df, wait=True)
+    return "200"

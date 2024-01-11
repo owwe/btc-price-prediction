@@ -1,0 +1,7 @@
+binance-connector
+pandas
+numpy
+boto3
+aws
+boto
+sagemaker
