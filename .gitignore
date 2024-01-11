@@ -9,6 +9,7 @@ dependencies
 *.so
 *.zip
 .terraform/*
+.env
 # Distribution / packaging
 .Python
 build/
